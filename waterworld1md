@@ -1,0 +1,339 @@
+Project 5 | charity: water Game Prototype
+In this Project, you’ll begin transforming a game concept into a working interactive prototype using HTML, CSS, and JavaScript.
+This first version should focus on core functionality — clickable elements, score tracking, a timer, and a basic layout. The goal is to bring your idea to life with simple, working mechanics, so don’t get bogged down by visual design and other finishing touches. You’ll refine and expand your game next week!
+
+Project Steps Overview:
+Scope your project and choose what game you’ll build:
+Assess your game idea from last week. Do you currently have the coding skills to build it? What elements of the game should be in scope, and what should be out-of-scope, at least for now?
+You do not have to bring to life the same idea from the previous submission. This time, you need to actually build it out, so choose wisely. Scoping the work and evaluating what you can and can’t do (yet!) in the time allotted is an important professional skill to develop.
+
+Water Drop: Users collect as many falling water drops as possible while avoiding dirty water  (bad drops). Users tap to collect drops before they hit the ground. Include a score counter, feedback messages, and penalties for “bad drops” to make it more engaging.
+Water Drop Game: Starter File
+
+
+Note: If you choose your own original idea (and not the provided starter files), you must build it completely from scratch using HTML, CSS, and JavaScript. Use this starter repo to get set up.
+Implement Core Game Features
+Add interactive elements (e.g., clicking on cans to collect points).
+Track and display the player’s score using JavaScript and provide real-time visual feedback when a player interacts with the game (e.g., a number updates, an element's color changes, etc.).
+Ensure your game layout adjusts well across different screen sizes and devices.
+Remember to follow charity: water’s brand guidelines and take inspiration from everything you learned about charity: water to ensure your game aligns with your stakeholders’ needs.
+Stuck? Check out the Debugging Guide for tips and prompts to help you troubleshoot and get better help from AI.
+Ready for a LevelUp? (20pts extra credit):
+Add a Challenge for Users (10 pts): Include an obstacle that reduces the player’s score.
+Add a Game Reset  (5 pts): Add a ‘Reset’ button to give players control over when the game restarts.
+Celebrate Wins  (5 pts): Add a confetti effect or a similar effect when the user wins the game.
+
+
+Submit Your Work
+Commit and push your changes to GitHub.
+Deploy your site and submit the live link. Please test your link in an incognito or private browser to ensure it’s correctly published and visible to evaluators.
+Reflect on your experience and prepare for job interviews and
+
+
+
+
+
+
+Time to bring your game idea to life! This week, you’ll begin developing your charity: water game by coding a basic prototype with HTML, CSS, and JavaScript. You’ll implement core features like clickable elements, score tracking, and responsive layout.
+
+Your goal isn't to make it perfect, it's to get a functional version up and running that reflects your concept. You’ll have a chance to polish and expand your game next week, but just like in real world environments, it's a good idea to show stakeholders where you're going before you dive too deep into finishing touches.
+
+
+
+
+so.
+
+I have been debating on two parts.  but that shits all over the keep it simple stupid rule.
+I have never done a tower defense game.  this is not a full one, but has the scope of one
+this feels more missile command or asteroid and i dont really like that.
+
+i sim city type game where regions have to be setup to progress through levels.
+
+i deally it would be 1 tower defense and then 1 level of sim city water or what ever
+
+
+but for now, the keep it simple stupid approach is a field Region, about 2/3 of screen.
+
+i took the whack a mole style starter because it can actually fit both mobile app and pc game.  or tablet or what the fuck ever.
+
+starter level.  is dropped in chat.
+
+shades of blue are water. darker water is better and more precious
+
+lime green with yellow in middle is farm land.
+
+shades of red are always bad guy pop ups  .  though with a variance on strength
+
+dark green is poison water.the longer they are up the more score drops
+
+
+yellow hearts are specials, though rare.
+
+
+the idea is that the purples and pinks pop ups you want to stay up.
+that symbolizes that the water is being used, points are scores.
+
+bright green triangles are happy farmland
+
+purple are expansive toxic sludge.  but sometimes purple can have beneficials pop up
+
+now.  sometimes when something is bonked back down from the whack, it can  net a reward instead of points
+
+rewards come in a variety of power ups.  like water moles score points faster or sluge or poisons can disappear faster.  or mo0re points per whack or more points for specials.
+can contribute to less point loss on misses or  time up for bad moles.
+
+special yellow heart rares can expand the size of the whack zone.  what ever is being clicked on or poked on if its a phone or tablet.
+
+yellow hearts can about 30% of the time pop up with a double pop rare, so that when things go down, they bounce back up for a 5 seconds before they bounce back down.
+
+all specials and power ups last 60 seconds
+
+combos can be achieved by the amount of good moles up at any time.  more good moles, better score pop multis
+
+same goes for bad moles.  many bad moles are bad.
+
+if too many bad moles are raised in a section.  call it  a
+
+4 verticle line  and 3 horizontal lines across.  called tile region for now.
+so.  if enough moles are up in that section of line regions it will kill the area.  it turns dark green.  nothing else can pop up from that region
+
+
+light browns are  tunnelers.  if they are up in 1 spot, a 2nd tunnel mole will be up, and they cross between them, so they field bonus moles from both regions where the double pop mole is up and shared
+
+any mole whacked from a black edge will drop all the bad moles in that tile region
+
+
+now.  this hole time (pun not intended), the water streams are flowing.  those build points.
+
+if any mole is up that is on a blue water way, that water way stops at that point as a damn.  call them beavers
+
+good beavers, or bad beavers can pop up out of those.  bad beavers can turn the water green, good beavers can shift it darker blue.
+
+the darker the water in motion, the higher points being scored.
+
+if a tile section gets destroyed, that entire water way gets split up.  so those are the do or die areas
+
+if an tile area dies their score is cut by 1/3
+
+
+if at any time the score reachs 0 the game ends.
+
+
+the stage 1 pic.  the water bucket can be like a bonus pop up that when active all water in motion scores more points.
+
+charity water sub brands.  those icons can be what pops up from a special that gets hit.
+
+the water buckets name is jerry
+
+the charity water in the middle bottom can go up along the top right corner of the game window.  score. can go below it.
+
+the stage 1 pic.  the water bucket can be like a bonus pop up that when active all water in motion scores more points.
+
+charity water sub brands.  those icons can be what pops up from a special that gets hit.  can have icons for what current active specials are active also
+
+ah o
+
+
+
+
+
+can you edit out the clean water glasses for icons or should i upload them one by one ?
+
+ok.  i think that is enough for now.
+
+yes.  I just made that up right on the spot
+no one believes me when i say i have an unofficial post doctorate in game theory. but.  im 52.  been on a pc since 1985 and started doing8 silly code your own games back in the early 80s.
+
+Thank you.  this should be fun :)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Project: charity: water Game Prototype Rubric
+Project: charity: water Game Prototype Rubric
+Criteria 	Ratings 	Pts
+This criterion is linked to a Learning Outcome Core Interactivity
+
+25 pts
+Full Points
+Student implemented at least one working interactive element that updates the game state, AND the player's score is tracked and displayed. Examples: clicking a button increases score; tapping an image shows a message; collecting a drop changes the UI
+
+13 pts
+Partial Points
+Some interactivity present, but the action does not visibly update any part of the game state (e.g. clicking works but does nothing functional), or score tracking has not been implemented
+
+0 pts
+No Points
+No working interactive elements or score tracking are implemented. Game is static or broken
+
+25 pts
+This criterion is linked to a Learning Outcome Responsive Layout
+
+15 pts
+Full Points
+Layout adjusts well for both desktop and mobile screen sizes. Elements remain usable and visually clear
+
+8 pts
+Partial Points
+Some responsiveness is present, but layout breaks or feels cramped
+
+0 pts
+No Points
+Game is not responsive or only works on one screen size
+
+15 pts
+This criterion is linked to a Learning Outcome Use of Branding & Visual Design
+
+10 pts
+Full Points
+charity: water brand elements (logo, colors, icons) are used thoughtfully to support the game’s theme
+
+5 pts
+Partial Points
+Some branding used, but inconsistently or without strong alignment
+
+0 pts
+No Points
+No charity: water branding or visual design effort
+
+10 pts
+This criterion is linked to a Learning Outcome LevelUp (Optional): Add a Challenge
+
+10 pts
+Bonus Points
+Gameplay includes a working twist (e.g., obstacles, penalties) that enhances the experience
+
+5 pts
+Partial Points
+Feature is present but not fully functional
+
+0 pts
+No Points
+No challenge mechanic added
+
+10 pts
+This criterion is linked to a Learning Outcome LevelUp (Optional): Game Controls
+
+5 pts
+Bonus Points
+A working Reset button is included and clearly controls gameplay
+
+3 pts
+Partial Points
+Button is present but not working as intended
+
+0 pts
+No Points
+No game controls included
+
+5 pts
+This criterion is linked to a Learning Outcome LevelUp (Optional): Celebrate Wins
+
+5 pts
+Bonus Points
+A win condition triggers a clear celebration (e.g., confetti, animation)
+
+3 pts
+Partial Points
+Celebration is present but buggy or incomplete
+
+0 pts
+No Points
+No celebration included
+
+5 pts
+This criterion is linked to a Learning Outcome Reflection: Prototyping
+
+10 pts
+Full Points
+Made an effort to answer the reflection question
+
+5 pts
+Partial Points
+Answered the reflection question, but the answer was off-topic, extremely short, or otherwise indicative of a lack of genuine effort
+
+0 pts
+No Points
+No attempt at answering the reflection question
+
+10 pts
+This criterion is linked to a Learning Outcome Reflection: Talking Points
+
+10 pts
+Full Points
+Made an effort to answer the reflection question
+
+5 pts
+Partial Points
+Answered the reflection question, but the answer was off-topic, extremely short, or otherwise indicative of a lack of genuine effort
+
+0 pts
+No Points
+No attempt at answering the reflection question
+
+10 pts
+This criterion is linked to a Learning Outcome Reflection: LinkedIn Post
+
+10 pts
+Full Points
+Made an effort to answer the reflection question
+
+5 pts
+Partial Points
+Answered the reflection question, but the answer was off-topic, extremely short, or otherwise indicative of a lack of genuine effort
+
+0 pts
+No Points
+No attempt at answering the reflection question
+
+10 pts
+
+
