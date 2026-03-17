@@ -3,6 +3,7 @@ const CENTER_INDEX = 12;
 const BASE_CLICKS = 90;
 const BASE_SPAWN_MS = 1100;
 const BASE_TOKEN_MS = 900;
+const GLOBAL_SPEED_BOOST = 1.11;
 
 const tokenConfig = {
   jerry: { label: 'Jerry', image: 'img/better-jerry.png' },
@@ -73,11 +74,11 @@ function getSpeedMultiplier() {
 }
 
 function getSpawnMs() {
-  return Math.max(350, Math.round(BASE_SPAWN_MS / getSpeedMultiplier()));
+  return Math.max(350, Math.round(BASE_SPAWN_MS / (getSpeedMultiplier() * GLOBAL_SPEED_BOOST)));
 }
 
 function getTokenLifetime(type) {
-  let ms = Math.round(BASE_TOKEN_MS / getSpeedMultiplier());
+  let ms = Math.round(BASE_TOKEN_MS / (getSpeedMultiplier() * GLOBAL_SPEED_BOOST));
   if (type === 'nuke') ms += 420;
   if (state.bioCharges > 0 && ['jerry', 'well', 'spring', 'pool'].includes(type)) ms = Math.round(ms * 0.68);
   if (type === 'waterGirl') ms = Math.round(ms * 0.5);
