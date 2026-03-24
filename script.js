@@ -20,7 +20,9 @@ const tokenConfig = {
   spring: { label: 'Spring', image: 'img/spring-logo.png' },
   pool: { label: 'Pool', image: 'img/pool-logo.png' },
   waterGirl: { label: 'Water Girl', image: 'img/water-girl.png' },
-  nuke: { label: 'Nuke', image: 'img/nuke.png' }
+  nuke: { label: 'Nuke', image: 'img/nuke.png' },
+  recycling: { label: 'Recycling', image: 'img/recycling.png' },
+  gasmask: { label: 'Gas Mask', image: 'img/gasmask.png' }
 };
 
 const state = {
@@ -44,6 +46,9 @@ const state = {
   activeToken: null,
   spawnInterval: null,
   tokenTimeout: null,
+  tokensClicked: 0,
+  tokensMissed: 0,
+  totalTokensSpawned: 0,
   counts: Object.keys(tokenConfig).reduce((acc, key) => ({ ...acc, [key]: 0 }), {})
 };
 
@@ -212,6 +217,9 @@ function updateStats() {
   document.getElementById('session-losses').textContent = String(state.sessionLosses);
   document.getElementById('water-girl-percent').textContent = `${Math.round(getWaterGirlChance() * 100)}%`;
   document.getElementById('nuke-percent').textContent = `${Math.round(getNukeChance() * 100)}%`;
+  document.getElementById('tokens-clicked').textContent = String(state.tokensClicked);
+  document.getElementById('tokens-missed').textContent = String(state.tokensMissed);
+  document.getElementById('tokens-total').textContent = String(state.totalTokensSpawned);
 }
 
 function renderInventory() {
@@ -283,6 +291,14 @@ function applyJerryBonus() {
   if (state.totalJerry % reserveStep === 0) state.reserveScore += 1;
 }
 
+function applyReserveConversion() {
+  while (state.reserveScore >= 7) {
+    state.reserveScore -= 7;
+    state.mainScore += 3;
+    setMessage('7 reserve points converted to +3 main score!');
+  }
+}
+
 function applyTokenEffect(type, index) {
   const jerryPoints = state.waterGirlChanceBonus >= 5 ? 2 : 1;
   if (type === 'waterGirl') return endGame(true);
@@ -329,6 +345,16 @@ function applyTokenEffect(type, index) {
     state.reserveScore += 1;
     setMessage('Pool bonus: +1 main, +1 reserve.');
   }
+  if (type === 'recycling') {
+    state.clicksLeft -= 1;
+    state.mainScore += 1;
+    setMessage('Recycling: -1 extra click, +1 main.');
+  }
+  if (type === 'gasmask') {
+    state.clicksLeft += 1;
+    state.reserveScore = Math.max(0, state.reserveScore - 1);
+    setMessage('Gas Mask: +1 click, -1 reserve.');
+  }
 
   if (state.mainScore <= 0) endGame(false);
 
@@ -340,6 +366,8 @@ function applyTokenEffect(type, index) {
   if (type === 'spring' && state.active && !state.ended) {
     setTimeout(() => spawnToken(index, true), 900);
   }
+
+  applyReserveConversion();
 }
 
 function pickTokenType() {
@@ -359,7 +387,9 @@ function pickTokenType() {
     ['bio', 11],
     ['well', 10],
     ['spring', 9],
-    ['pool', 8]
+    ['pool', 8],
+    ['recycling', 6],
+    ['gasmask', 6]
   ];
 
   if (state.nukeChanceBonus >= 6) pool.push(['nuke', 10]);
@@ -412,12 +442,17 @@ function spawnToken(preferredIndex, isBounce = false) {
   cell.innerHTML = `<img class="token ${type}" src="${tokenConfig[type].image}" alt="${tokenConfig[type].label}">`;
   state.activeToken = { type, index };
   state.counts[type] += 1;
+  state.totalTokensSpawned += 1;
   updateStats();
   renderInventory();
 
   const duration = isBounce ? 2000 : getTokenLifetime(type);
   state.tokenTimeout = setTimeout(() => {
-    if (state.activeToken && state.activeToken.index === index) clearActiveToken();
+    if (state.activeToken && state.activeToken.index === index) {
+      state.tokensMissed += 1;
+      clearActiveToken();
+      updateStats();
+    }
   }, duration);
 }
 
@@ -441,6 +476,9 @@ function startGame() {
   state.nukeChanceBonus = 0;
   state.springCharges = 0;
   state.bioCharges = 0;
+  state.tokensClicked = 0;
+  state.tokensMissed = 0;
+  state.totalTokensSpawned = 0;
   state.counts = Object.keys(tokenConfig).reduce((acc, key) => ({ ...acc, [key]: 0 }), {});
   document.getElementById('game-grid').classList.remove('win-grid', 'loss-grid');
   createGrid();
@@ -466,6 +504,9 @@ function resetGame() {
   state.springCharges = 0;
   state.bioCharges = 0;
   state.activeToken = null;
+  state.tokensClicked = 0;
+  state.tokensMissed = 0;
+  state.totalTokensSpawned = 0;
   state.counts = Object.keys(tokenConfig).reduce((acc, key) => ({ ...acc, [key]: 0 }), {});
   createGrid();
   document.getElementById('game-grid').classList.remove('win-grid', 'loss-grid');
@@ -483,6 +524,7 @@ document.getElementById('game-grid').addEventListener('click', (event) => {
   const { type } = state.activeToken;
   clearTimeout(state.tokenTimeout);
   clearInterval(state.spawnInterval);
+  state.tokensClicked += 1;
   runHitAnimation(cell, type, () => {
     clearActiveToken();
     spendClick();

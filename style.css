@@ -239,9 +239,13 @@ button {
 .difficulty-controls {
   margin-top: 10px;
   padding-top: 8px;
-  border-top: 2px solid #FF902A;
   display: grid;
   gap: 6px;
+}
+
+.instructions .difficulty-controls {
+  padding-top: 8px;
+  border-top: 2px solid #FF902A;
 }
 
 .difficulty-controls label {
@@ -424,6 +428,35 @@ button {
   width: 34px;
   height: 34px;
   object-fit: contain;
+}
+
+.token-stats-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.token-stats {
+  background: #FF902A;
+  border: 2px solid #FF902A;
+  border-radius: 3px;
+  padding: 8px;
+  box-shadow: 0 2px 14px rgb(1, 0, 6);
+  font-size: 0.9rem;
+}
+
+.token-stats p {
+  margin: 4px 0;
+  font-weight: 700;
+}
+
+.token-stats-container .difficulty-controls {
+  background: #FF902A;
+  border: 2px solid #FF902A;
+  border-radius: 3px;
+  padding: 8px;
+  box-shadow: 0 2px 14px rgb(1, 0, 6);
 }
 
 .game-grid.win-grid {

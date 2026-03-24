@@ -59,17 +59,10 @@
           <li>Well: +1 main or reserve, +1% Water Girl chance.</li>
           <li>Spring: +1 main, next good tokens bounce once (10 clicks).</li>
           <li>Pool: +1 main, +1 reserve.</li>
+          <li>Recycling: -1 extra click, +1 main score.</li>
+          <li>Gas Mask: +1 click, -1 reserve score.</li>
+          <li>Every 7 reserve: removed for +3 main score.</li>
         </ul>
-        <div class="difficulty-controls" aria-label="Difficulty controls">
-          <label for="popup-speed-slider">Popup Speed <span id="popup-speed-value">Stage 4</span></label>
-          <input id="popup-speed-slider" type="range" min="1" max="5" step="1" value="4" aria-label="Popup speed stage">
-
-          <label for="cycle-speed-slider">Cycle Speed <span id="cycle-speed-value">Stage 4</span></label>
-          <input id="cycle-speed-slider" type="range" min="1" max="5" step="1" value="4" aria-label="Cycle speed stage">
-
-          <label for="grid-density-slider">Clickable Tiles <span id="grid-density-value">5x5 (24 playable)</span></label>
-          <input id="grid-density-slider" type="range" min="1" max="2" step="1" value="2" aria-label="Clickable tile count">
-        </div>
         <div class="controls">
           <button id="start-game">Start</button>
           <button id="reset-game">Reset</button>
@@ -96,6 +89,24 @@
       <img src="img/pool-logo.png" alt="Pool logo token">
       <img src="img/well-logo.png" alt="Well logo token">
       <img src="img/spring-logo.png" alt="Spring logo token">
+    </div>
+
+    <div class="token-stats-container">
+      <div class="token-stats">
+        <p>Total Tokens Clicked: <span id="tokens-clicked">0</span></p>
+        <p>Total Tokens Missed: <span id="tokens-missed">0</span></p>
+        <p>Total Tokens Spawned: <span id="tokens-total">0</span></p>
+      </div>
+      <div class="difficulty-controls" aria-label="Difficulty controls">
+        <label for="popup-speed-slider">Popup Speed <span id="popup-speed-value">Stage 4</span></label>
+        <input id="popup-speed-slider" type="range" min="1" max="5" step="1" value="4" aria-label="Popup speed stage">
+
+        <label for="cycle-speed-slider">Cycle Speed <span id="cycle-speed-value">Stage 4</span></label>
+        <input id="cycle-speed-slider" type="range" min="1" max="5" step="1" value="4" aria-label="Cycle speed stage">
+
+        <label for="grid-density-slider">Clickable Tiles <span id="grid-density-value">5x5 (24 playable)</span></label>
+        <input id="grid-density-slider" type="range" min="1" max="2" step="1" value="2" aria-label="Clickable tile count">
+      </div>
     </div>
   </div>
   <script src="script.js"></script>
