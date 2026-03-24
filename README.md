@@ -8,7 +8,7 @@ Everything, plus the kitchen sink.
 Immaculate and superb.  goood luck beating it on default settings :)  
 it is ok if you have to turn the settings down
 
-https://diazdizazter.github.io/05-cw-game-water-quest/
+https://diazdizazter.github.io/Mole-Rapture-in-Waterworld/
 
 ## Deployment Notes (GitHub Pages)
 
