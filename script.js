@@ -7,7 +7,7 @@ const GLOBAL_SPEED_BOOST = 1.11;
 const STAGE_BASELINE = 4;
 const STAGE_UP_MULTIPLIER = 1.12;
 const STAGE_DOWN_MULTIPLIER = 0.89;
-const GRID_TILE_COUNT_BY_STAGE = { 1: 3, 2: 5, 3: 7, 4: 9, 5: 9 };
+const GRID_TILE_COUNT_BY_STAGE = { 1: 3, 2: 5, 3: 7, 4: 9, 5: 11 };
 const GRID_PRIORITY = [7, 11, 13, 17, 6, 8, 16, 18, 1, 3, 5, 9, 15, 19, 21, 23, 0, 2, 4, 10, 14, 20, 22, 24];
 const WIN_SOUND_PATH = 'wav/mixkit-light-applause-with-laughter-audience-512.wav';
 const winAudio = new Audio(WIN_SOUND_PATH);
@@ -102,13 +102,8 @@ function handleCycleSpeedChange(value) {
 }
 
 function getGridTileCount(stage = state.gridDensityStage) {
-  return GRID_TILE_COUNT_BY_STAGE[stage] ?? GRID_TILE_COUNT_BY_STAGE[2];
-}
-
-function getGridSizeScale(stage = state.gridDensityStage) {
-  if (stage === 1) return 1.25;
-  if (stage >= 3) return 0.75;
-  return 1;
+  const normalizedStage = Math.max(1, Math.min(5, Number(stage)));
+  return GRID_TILE_COUNT_BY_STAGE[normalizedStage] ?? GRID_TILE_COUNT_BY_STAGE[2];
 }
 
 function getPlayableIndices() {
@@ -120,7 +115,6 @@ function applyGridDensityToUI() {
   if (!grid) return;
 
   state.playableIndices = getPlayableIndices();
-  grid.style.setProperty('--cell-scale', String(getGridSizeScale()));
 
   const playableSet = new Set(state.playableIndices);
   const cells = grid.querySelectorAll('.grid-cell');

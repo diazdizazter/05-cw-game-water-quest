@@ -9,14 +9,14 @@
 <body>
   <div class="container">
     <header class="top-bar">
-      <h1 class="game-title">
-        <span class="logo-hover-wrap">
-          <img class="cw-logo" src="img/cw_logo_horizontal.png" alt="charity: water logo">
-          <span class="qr-popover" role="tooltip" aria-label="charity: water donation link">
-            <img src="img/qrcode_www.charitywater.org.png" alt="charity: water donation QR code">
-            <a href="https://www.charitywater.org/donate/the-spring" target="_blank" rel="noopener noreferrer">https://www.charitywater.org/donate/the-spring</a>
-          </span>
+      <span class="logo-hover-wrap" tabindex="0">
+        <img class="cw-logo" src="img/cw_logo_horizontal.png" alt="charity: water logo">
+        <span class="qr-popover" role="tooltip" aria-label="charity: water donation link">
+          <img src="img/qrcode_www.charitywater.org.png" alt="charity: water donation QR code">
+          <a href="https://www.charitywater.org/donate/the-spring" target="_blank" rel="noopener noreferrer">https://www.charitywater.org/donate/the-spring</a>
         </span>
+      </span>
+      <h1 class="game-title">
         <span class="title-hover-wrap" tabindex="0">
           <span class="game-title-text">mole rapture in water world.</span>
           <span class="qr-popover" role="tooltip" aria-label="GitHub project link">
@@ -25,10 +25,13 @@
           </span>
         </span>
       </h1>
-      <div class="controls">
-        <button id="start-game">Start</button>
-        <button id="reset-game">Reset</button>
-      </div>
+      <span class="logo-hover-wrap" tabindex="0">
+        <img class="cw-logo cw-logo-alt" src="img/cw_logo.png" alt="charity: water logo mark">
+        <span class="qr-popover qr-popover-right" role="tooltip" aria-label="charity: water main site">
+          <img src="img/qrcode_www.charitywater.org.png" alt="charity: water website QR code">
+          <a href="https://www.charitywater.org/" target="_blank" rel="noopener noreferrer">https://www.charitywater.org/</a>
+        </span>
+      </span>
     </header>
 
     <div class="stats">
@@ -64,6 +67,10 @@
 
           <label for="grid-density-slider">Clickable Tiles <span id="grid-density-value">9 tiles</span></label>
           <input id="grid-density-slider" type="range" min="1" max="5" step="1" value="4" aria-label="Clickable tile count">
+        </div>
+        <div class="controls">
+          <button id="start-game">Start</button>
+          <button id="reset-game">Reset</button>
         </div>
       </aside>
 
