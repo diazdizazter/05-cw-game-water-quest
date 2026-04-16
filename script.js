@@ -358,12 +358,15 @@ function applyTokenEffect(type, index) {
 
   if (state.mainScore <= 0) endGame(false);
 
+  const goodBounceTypes = ['jerry', 'well', 'spring', 'pool'];
+  const shouldBounceGoodToken = goodBounceTypes.includes(type) && state.springCharges > 0;
+
   if (state.springCharges > 0 || state.bioCharges > 0) {
     if (state.springCharges > 0) state.springCharges -= 1;
     if (state.bioCharges > 0) state.bioCharges -= 1;
   }
 
-  if (type === 'spring' && state.active && !state.ended) {
+  if (shouldBounceGoodToken && state.active && !state.ended) {
     setTimeout(() => spawnToken(index, true), 900);
   }
 
