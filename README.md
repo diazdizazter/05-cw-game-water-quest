@@ -6,7 +6,7 @@ A DOM-based JavaScript arcade game inspired by whack-a-mole, themed around chari
 Multiple available difficulty levels
 
 Live version:
-[https://diazdizazter.github.io/Mole-Rapture-in-Waterworld/](https://diazdizazter.github.io/Desolate-Envirnoment-Fighter-Whack-a-Mole-FINAL/)
+[https://diazdizazter.github.io/Desoloate Envirnoment Fighter/](https://diazdizazter.github.io/Desolate-Envirnoment-Fighter-Whack-a-Mole-FINAL/)
 
 ## Project Snapshot
 
