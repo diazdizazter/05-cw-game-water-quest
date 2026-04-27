@@ -1,4 +1,6 @@
-# Mole Rapture in Waterworld
+Learning Accelerator - Coding for the Web Project
+
+Any Operating system / screen size / Very Challenging :)
 
 A DOM-based JavaScript arcade game inspired by whack-a-mole, themed around charity: water branding and token-based game mechanics
 Multiple available difficulty levels
